@@ -1,9 +1,5 @@
 package one;
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
 public class Variables {
 
 	public static void main (String[] args) throws Exception {
@@ -17,6 +13,6 @@ public class Variables {
 			sum += i;
 		}
 		
-		System.out.println("SUM IS: " + sum);
+		System.out.print("SUM IS: " + sum);
 	}
 }
