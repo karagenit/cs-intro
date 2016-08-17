@@ -1,4 +1,4 @@
-package one;
+package basics;
 
 public class Variables {
 
