@@ -7,8 +7,7 @@ public class Convert {
 	public static void main(String[] args) {
 
 		boolean quit = false;
-		int input, inBase, outBase, raw; 
-		String output;
+		int input, inBase, outBase; 
 
 		Scanner scanner = new Scanner(System.in);
 		
@@ -20,11 +19,8 @@ public class Convert {
 			inBase = scanner.nextInt();
 			System.out.print("Enter Output Base: ");
 			outBase = scanner.nextInt();
-			
-			raw = Decode.decode(input, inBase);
-			output = Encode.encode(raw, outBase);
-			
-			System.out.println("Value: " + output);
+						
+			System.out.println("Value: " + Encode.encode(Decode.decode(input, inBase), outBase));
 			System.out.println();
 		}
 		
