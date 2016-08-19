@@ -21,22 +21,14 @@ public class One {
 	}
 
 	public int max1020(int a, int b) {
-		if (a > b) {
-			if (bounded(a)) {
-				return a;
-			} else if (bounded(b)) {
-				return b;
-			}
-		}
-		
 		if (b > a) {
-			if (bounded(b)) {
-				return b;
-			} else if (bounded(a)) {
-				return a;
-			}
+			int tmp = b;
+			b = a;
+			a = tmp; //b's old val
 		}
-	
+			  
+		if(bounded(a)) return a;
+		if(bounded(b)) return b;
 		return 0;
 	}
 
