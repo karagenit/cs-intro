@@ -1,6 +1,6 @@
 package codingbat;
 
-public class One {
+public class Warmup {
 	
 	public int close10(int a, int b) {
 		int distA = Math.abs(10 - a);
