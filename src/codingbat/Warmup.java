@@ -35,4 +35,17 @@ public class Warmup {
 	private boolean bounded(int a) {
 		return (a >= 10 && a <= 20);
 	}
+	
+	public int sumDouble(int a, int b) {
+		return (a == b) ? 2 * (a + b) : (a + b);
+	}
+	
+	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+		return aSmile == bSmile;
+	}
+
+	public boolean sleepIn(boolean weekday, boolean vacation) {
+		return !weekday || vacation;
+	}
+
 }
