@@ -3,7 +3,6 @@ package ascii;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 
@@ -14,7 +13,7 @@ public class AsciiGenerator {
 	static int THRESH_3 = 150;
 	static int THRESH_4 = 200;
 	static int RESOLUTION_SCALE = 10;
-	static int CHAR_PER_PIXEL = 1;
+	static int CHAR_PER_PIXEL = 2;
 
 	public static void main(String[] args) {
 		
@@ -57,6 +56,7 @@ public class AsciiGenerator {
 		 return matrix;
 	}
 
+	//TODO test deres method
 	@SuppressWarnings("unused")
 	private static int[][] deresolve(int[][] input) {
 		
@@ -80,6 +80,7 @@ public class AsciiGenerator {
 		
 		return image;
 	}
+	//TODO dynamic deres factor based on img size
 	
 	private static char[][] getAsciiMatrix(int[][] input) {
 		int height = input.length;
@@ -91,9 +92,8 @@ public class AsciiGenerator {
 			for(int b = 0; b < width; b++) {
 				char val = getAscii(input[a][b]);
 				
-				//TODO broken for CHAR vals > 1
 				for(int c = 0; c < CHAR_PER_PIXEL; c++) {
-					output[a][b+c] = val;
+					output[a][(b*CHAR_PER_PIXEL)+c] = val;
 				}
 			}
 		}
@@ -122,6 +122,7 @@ public class AsciiGenerator {
 		return (color[0] + color[1] + color[2]) / 3;
 	}
 	
+	//TODO dynamic thresh based on img averages
 	private static char getAscii(int color) {
 		
 		if(color < THRESH_1) {
