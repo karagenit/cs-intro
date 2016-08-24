@@ -28,7 +28,10 @@ public class AsciiGenerator {
 			
 			//TODO nicer output (don't use Arrays.toString)
 			for(char[] line : output) {
-				System.out.println(Arrays.toString(line));
+				for(char val : line) {
+					System.out.print(val);
+				}
+				System.out.println();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
