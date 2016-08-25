@@ -12,7 +12,7 @@ public class AsciiGenerator {
 	static int THRESH_2 = 100;
 	static int THRESH_3 = 150;
 	static int THRESH_4 = 200;
-	static int RESOLUTION_SCALE = 10;
+	static int RESOLUTION_SCALE = 5;
 	static int CHAR_PER_PIXEL = 2;
 
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class AsciiGenerator {
 		String imagePath = "C:\\java2.png";
 		
 		try {
-			char[][] output = getAsciiMatrix(getBlackWhite(ImageIO.read(new File(imagePath))));
+			char[][] output = getAsciiMatrix(deresolve(getBlackWhite(ImageIO.read(new File(imagePath)))));
 			
 			//TODO nicer output (don't use Arrays.toString)
 			for(char[] line : output) {
@@ -57,28 +57,15 @@ public class AsciiGenerator {
 	}
 
 	//TODO test deres method
-	@SuppressWarnings("unused")
 	private static int[][] deresolve(int[][] input) {
 		
-		int height = input.length;
-		int width  = input[0].length;
-		int[][] image = new int[height / RESOLUTION_SCALE][width / RESOLUTION_SCALE];
+		//int height = input.length;
+		//int width  = input[0].length;
+		//int[][] image = new int[height / RESOLUTION_SCALE][width / RESOLUTION_SCALE];
 		
-		for(int a = 0; a < height; a += RESOLUTION_SCALE) {
-			for(int b = 0; b < width; b += RESOLUTION_SCALE) {
-				int sum = 0;
-				
-				for(int i = 0; i < RESOLUTION_SCALE; i++) {
-					for(int j = 0; j < RESOLUTION_SCALE; i++) {
-						sum += input[a+i][b+j];
-					}
-				}
-				
-				image[a / RESOLUTION_SCALE][b / RESOLUTION_SCALE] = sum;
-			}
-		}
 		
-		return image;
+		
+		return input;
 	}
 	//TODO dynamic deres factor based on img size
 	
