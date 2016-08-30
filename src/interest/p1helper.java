@@ -1,3 +1,4 @@
+package interest;
 
 import java.util.Scanner;
 
@@ -12,13 +13,13 @@ public class p1helper {
 		       double interest, double loaned){
 		
 		System.out.println( month +"\t"+ Math.round(principal*100.0)/100.0+"\t\t"+ Math.round(interest*100.0)/100.0+"\t\t"+ Math.round(loaned*100.0)/100.0);
-		
 	}
 
 	
 	public static double get_param(String prompt, double min, double max){
 		Scanner my_double = new Scanner(System.in);
 		double returned ;
+		
 		while(true){
 			try{
 				System.out.println(prompt);
@@ -29,8 +30,8 @@ public class p1helper {
 			} catch(Exception e){
 				my_double.reset();
 			}
+			
+			my_double.close();
 		}
-		
 	}
-	
 }
