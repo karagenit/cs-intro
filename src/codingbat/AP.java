@@ -31,5 +31,24 @@ public class AP {
 		return count;
 	}
 	
-	
+	public int scoresAverage(int[] scores) {
+		  int avg1, avg2;
+		  
+		  avg1 = average(scores, 0, (scores.length / 2));
+		  avg2 = average(scores, (scores.length / 2), scores.length);
+		  
+		  return (avg1 > avg2) ? avg1 : avg2;
+		}
+
+		private int average(int[] scores, int start, int end) {
+		  int sum = 0; 
+		  int count = 0;
+		  
+		  for(int i = start; i < end; i++) {
+		    sum += scores[i];
+		    count++;
+		  }
+		  
+		  return (sum/count);
+		}
 }
