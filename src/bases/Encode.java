@@ -1,11 +1,6 @@
 package bases;
 
-public class Encode {
-	
-	static char[] charList = {
-			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-			'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'
-	};
+public class Encode extends CharList {
 	
 	public static String encode(int input, int base) {
 		
@@ -22,16 +17,8 @@ public class Encode {
 				input -= Math.pow(base, power);
 				val++;
 			}
-			output += getCharMap(val);
+			output += getChar(val);
 		}
 		return output;
-	}
-	
-	public static char getCharMap(int input) {
-		if(input >= 0 && input < charList.length) {
-			return charList[input];
-		} else {
-			return '?';
-		}
 	}
 }

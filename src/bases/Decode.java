@@ -1,6 +1,6 @@
 package bases;
 
-public class Decode {
+public class Decode extends CharList {
 
 	public static int decode(int input, int base) {
 		return decode(Integer.toString(input), base);
@@ -17,7 +17,7 @@ public class Decode {
 				
 		for(char c : input) {
 			power--;
-			sum += Character.getNumericValue(c) * Math.pow(base, power); 
+			sum += getIndex(c) * Math.pow(base, power); 
 		}
 		
 		return sum;

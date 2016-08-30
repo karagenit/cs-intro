@@ -3,25 +3,30 @@ package bases;
 import java.util.Scanner;
 
 public class Convert {
+	
+	
 
 	public static void main(String[] args) {
 
 		boolean quit = false;
-		int input, inBase, outBase; 
+		String input;
+		int inBase, outBase; 
 
 		Scanner scanner = new Scanner(System.in);
 		
 		while(!quit) {
 			
 			System.out.print("Enter Input Value: ");
-			input = scanner.nextInt();
+			input = scanner.nextLine();
 			System.out.print("Enter Input Base: ");
-			inBase = scanner.nextInt();
+			inBase = Integer.parseInt(scanner.nextLine());
 			System.out.print("Enter Output Base: ");
-			outBase = scanner.nextInt();
+			outBase = Integer.parseInt(scanner.nextLine());
 						
 			System.out.println("Value: " + Encode.encode(Decode.decode(input, inBase), outBase));
 			System.out.println();
+			
+			scanner.reset();
 		}
 		
 		scanner.close();
